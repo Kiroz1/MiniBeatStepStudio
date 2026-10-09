@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MiniBeatStepStudio – Estudio de beats</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>MiniBeatStepStudio</h1>
+  <button id="play" aria-label="Reproducir o detener">▶ Reproducir</button>
+  <div class="grp"><label for="bpm">BPM</label><input id="bpm" type="number" min="60" max="200" value="124"></div>
+    <div class="grp"><label for="steps">Pasos</label>
+    <select id="steps"><option value="8">8</option><option value="16" selected>16</option><option value="32">32</option><option value="48">48</option><option value="64">64</option></select>
+  </div>
+  <div class="grp"><label for="swing">Swing</label><input id="swing" type="range" min="0" max="60" value="0"></div>
+  <div class="grp"><label for="master">Volumen</label><input id="master" type="range" min="0" max="100" value="80"></div>
+  <button id="clear">Limpiar todo</button>
+</header>
+<main>
+  <section>
+    <h2>Rack de canales</h2>
+    <div class="scroll" id="rack"></div>
+    <p class="tip">Haz clic en un paso para activarlo. Barra espaciadora = reproducir / detener.</p>
+  </section>
+  <section>
+    <h2>Piano roll – Sintetizador</h2>
+    <div class="grp" style="margin:10px 12px 0;width:max-content;flex-wrap:wrap">
+      <label for="wave">Onda</label>
+      <select id="wave"><option value="sawtooth">Sierra</option><option value="square">Cuadrada</option><option value="triangle">Triángulo</option><option value="sine">Seno</option></select>
+      <label for="cut">Filtro</label><input id="cut" type="range" min="300" max="8000" value="2500">
+      <label for="syv">Volumen</label><input id="syv" type="range" min="0" max="100" value="60">
+    </div>
+    <div class="scroll roll" id="roll"></div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
